@@ -1,6 +1,6 @@
 use anchor_lang::prelude::*;
 
-declare_id!("BA1XyCrjvVbCiCFGR4i1YzEofxkjeuiaLDhCvcHHjcWM");
+declare_id!("ERZeBKsnZ19HqiRCJ4npkVkwf2hvUKN5GSsDW5Uy84bm");
 
 #[program]
 pub mod feedingdanny {
@@ -37,7 +37,7 @@ pub mod feedingdanny {
         let fish_size = game.fish[fish_index as usize].size;
         
         if game.player.size > fish_size {
-            let exp_gain = fish_size as u32 * 10;
+            let exp_gain = fish_size as u32 * 10 + 10;
             game.player.exp += exp_gain;
             game.player.score += fish_size as u32;
             
